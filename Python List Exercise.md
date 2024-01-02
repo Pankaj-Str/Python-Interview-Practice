@@ -473,3 +473,324 @@ my_list = [1, 2, 2, 3, 4, 5, 5, 6]
 duplicates_list = find_duplicates(my_list)
 print(duplicates_list)
 ```
+
+34. Remove empty List from List:
+
+```python
+# codeswithpankaj.com
+def remove_empty_lists(lst):
+    updated_list = [sublist for sublist in lst if sublist]
+    return updated_list
+
+# Example usage:
+my_list = [[], [1, 2], [], [3, 4], [], [5, 6]]
+result_list = remove_empty_lists(my_list)
+print(result_list)
+```
+
+35. Python – Convert List to List of dictionaries:
+
+```python
+# codeswithpankaj.com
+def convert_list_to_dict(lst):
+    dict_list = [{'value': item} for item in lst]
+    return dict_list
+
+# Example usage:
+my_list = [1, 2, 3, 4, 5]
+dict_list = convert_list_to_dict(my_list)
+print(dict_list)
+```
+
+36. Python – Convert Lists of List to Dictionary:
+
+```python
+# codeswithpankaj.com
+def convert_lists_of_list_to_dict(lists_of_list):
+    dict_list = {sublist[0]: sublist[1:] for sublist in lists_of_list}
+    return dict_list
+
+# Example usage:
+my_lists_of_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+dict_list = convert_lists_of_list_to_dict(my_lists_of_list)
+print(dict_list)
+```
+
+37. Python | Uncommon elements in Lists of List:
+
+```python
+# codeswithpankaj.com
+def uncommon_elements_in_lists_of_list(lists_of_list):
+    all_elements = [item for sublist in lists_of_list for item in sublist]
+    uncommon_elements = [ele for ele in all_elements if all_elements.count(ele) == 1]
+    return uncommon_elements
+
+# Example usage:
+my_lists_of_list = [[1, 2, 3], [3, 4, 5], [5, 6, 7]]
+uncommon_elements = uncommon_elements_in_lists_of_list(my_lists_of_list)
+print(uncommon_elements)
+```
+
+38. Python program to select Random value from list of lists:
+
+```python
+import random
+
+# codeswithpankaj.com
+def select_random_value(list_of_lists):
+    random_list = random.choice(list_of_lists)
+    random_value = random.choice(random_list)
+    return random_value
+
+# Example usage:
+my_list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+random_value = select_random_value(my_list_of_lists)
+print(random_value)
+```
+
+39. Python – Reverse Row sort in Lists of List:
+
+```python
+# codeswithpankaj.com
+def reverse_row_sort(lists_of_list):
+    sorted_lists = [sorted(sublist, reverse=True) for sublist in lists_of_list]
+    return sorted_lists
+
+# Example usage:
+my_lists_of_list = [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
+sorted_lists = reverse_row_sort(my_lists_of_list)
+print(sorted_lists)
+```
+
+40. Python – Pair elements with Rear element in Matrix Row:
+
+```python
+# codeswithpankaj.com
+def pair_elements_with_rear(matrix):
+    paired_matrix = [[(matrix[row][col], matrix[row][col + 1]) for col in range(len(matrix[row]) - 1)] for row in range(len(matrix))]
+    return paired_matrix
+
+# Example usage:
+my_matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+paired_matrix = pair_elements_with_rear(my_matrix)
+print(paired_matrix)
+```
+
+41. Python Program to count unique values inside a list:
+
+```python
+# codeswithpankaj.com
+def count_unique_values(lst):
+    unique_values = len(set(lst))
+    return unique_values
+
+# Example usage:
+my_list = [1, 2, 3, 1, 2, 4, 5]
+unique_count = count_unique_values(my_list)
+print(unique_count)
+```
+
+42. Python – List product excluding duplicates:
+
+```python
+# codeswithpankaj.com
+def product_excluding_duplicates(lst):
+    unique_values = list(set(lst))
+    product_result = 1
+    for value in unique_values:
+        product_result *= value
+    return product_result
+
+# Example usage:
+my_list = [1, 2, 3, 2, 4, 5]
+result = product_excluding_duplicates(my_list)
+print(result)
+```
+
+43. Python – Extract elements with Frequency greater than K:
+
+```python
+# codeswithpankaj.com
+from collections import Counter
+
+def extract_elements_with_frequency(lst, k):
+    frequency_counter = Counter(lst)
+    extracted_elements = [ele for ele, count in frequency_counter.items() if count > k]
+    return extracted_elements
+
+# Example usage:
+my_list = [1, 2, 3, 2, 4, 5, 2]
+k_value = 1
+result = extract_elements_with_frequency(my_list, k_value)
+print(result)
+```
+
+44. Python – Test if List contains elements in Range:
+
+```python
+# codeswithpankaj.com
+def test_list_contains_elements_in_range(lst, start, end):
+    return all(start <= ele <= end for ele in lst)
+
+# Example usage:
+my_list = [1, 2, 3, 4, 5]
+start_range = 1
+end_range = 5
+contains_elements_in_range = test_list_contains_elements_in_range(my_list, start_range, end_range)
+print(contains_elements_in_range)
+```
+
+45. Python program to check if the list contains three consecutive common numbers in Python:
+
+```python
+# codeswithpankaj.com
+def has_three_consecutive_common(lst):
+    return any(lst[i] == lst[i+1] == lst[i+2] for i in range(len(lst)-2))
+
+# Example usage:
+my_list = [1, 2, 2, 3, 3, 3, 4]
+has_consecutive_common = has_three_consecutive_common(my_list)
+print(has_consecutive_common)
+```
+
+46. Python program to find the Strongest Neighbour:
+
+```python
+# codeswithpankaj.com
+def find_strongest_neighbour(lst):
+    n = len(lst)
+    strongest_neighbours = [max(lst[i - 1], lst[i + 1]) for i in range(1, n - 1)]
+    return strongest_neighbours
+
+# Example usage:
+my_list = [4, 5, 1, 2, 10]
+result = find_strongest_neighbour(my_list)
+print(result)
+```
+
+47. Python Program to print all Possible Combinations from the three Digits:
+
+```python
+# codeswithpankaj.com
+from itertools import permutations
+
+def print_all_combinations_three_digits():
+    digits = [1, 2, 3]
+    combinations = list(permutations(digits, 3))
+    return combinations
+
+# Example usage:
+result = print_all_combinations_three_digits()
+print(result)
+```
+
+48. Python program to find all the Combinations in the list with the given condition:
+
+```python
+# codeswithpankaj.com
+from itertools import combinations
+
+def find_combinations_with_condition(lst, k):
+    combinations_list = [comb for comb in combinations(lst, k) if sum(comb) == 10]
+    return combinations_list
+
+# Example usage:
+my_list = [1, 2, 3, 4, 5]
+k_value = 3
+result = find_combinations_with_condition(my_list, k_value)
+print(result)
+```
+
+49. Python program to get all unique combinations of two Lists:
+
+```python
+# codeswithpankaj.com
+from itertools import product
+
+def get_unique_combinations_of_two_lists(list1, list2):
+    unique_combinations = list(product(set(list1), set(list2)))
+    return unique_combinations
+
+# Example usage:
+list1 = [1, 2]
+list2 = ['a', 'b']
+result = get_unique_combinations_of_two_lists(list1, list2)
+print(result)
+```
+
+50. Python program to remove all occurrences of an element from a list:
+
+```python
+# codeswithpankaj.com
+def remove_all_occurrences(lst, element_to_remove):
+    updated_list = [ele for ele in lst if ele != element_to_remove]
+    return updated_list
+
+# Example usage:
+my_list = [1, 2, 3, 2, 4, 2, 5]
+element_to_remove = 2
+result_list = remove_all_occurrences(my_list, element_to_remove)
+print(result_list)
+```
+
+51. Python – Remove Consecutive K element records:
+
+```python
+# codeswithpankaj.com
+def remove_consecutive_k_element_records(lst, k):
+    updated_list = [ele for ele, count in zip(lst, lst[1:] + [None]) if count != k]
+    return updated_list
+
+# Example usage:
+my_list = [1, 1, 2, 2, 2, 3, 4, 4, 5]
+k_value = 2
+result_list = remove_consecutive_k_element_records(my_list, k_value)
+print(result_list)
+```
+
+52. Python – Replace index elements with elements in Other List:
+
+```python
+# codeswithpankaj.com
+def replace_index_elements_with_other_list(lst1, lst2):
+    for index, ele in enumerate(lst2):
+        if index < len(lst1):
+            lst1[index] = ele
+    return lst1
+
+# Example usage:
+list1 = [1, 2, 3, 4, 5]
+list2 = ['a', 'b', 'c']
+result_list = replace_index_elements_with_other_list(list1, list2)
+print(result_list)
+```
+
+53. Python Program to Retain records with N occurrences of K:
+
+```python
+# codeswithpankaj.com
+from collections import Counter
+
+def retain_records_with_n_occurrences(lst, k, n):
+    frequency_counter = Counter(lst)
+    retained_records = [ele for ele in lst if frequency_counter[ele] == n]
+    return retained_records
+
+# Example usage:
+my_list = [1, 2, 3, 1, 2, 4, 5, 2]
+element_to_retain = 2
+occurrences_to_retain = 2
+result = retain_records_with_n_occurrences(my_list, element_to_retain, occurrences_to_retain)
+print(result)
+```
+
+54. Python Program to Sort the list according to the column using lambda:
+
+```python
+# codeswithpankaj.com
+def sort_list_by_column(lst, column):
+    sorted_list = sorted(lst, key=lambda x: x[column])
+    return sorted_list
+
+
+
