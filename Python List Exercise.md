@@ -792,5 +792,12 @@ def sort_list_by_column(lst, column):
     sorted_list = sorted(lst, key=lambda x: x[column])
     return sorted_list
 
+# Example usage:
+my_list = [(1, 4), (2, 3), (3, 2), (4, 1)]
+column_to_sort = 1
+result_list = sort_list_by_column(my_list, column_to_sort)
+print(result_list)
+```
+
 
 
