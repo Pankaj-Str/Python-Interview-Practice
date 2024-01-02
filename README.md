@@ -406,3 +406,54 @@
 90. **Explain the purpose of the `repr()` function in Python.**
     - *Answer:* The `repr()` function is used to obtain the formal string representation of an object. It is often used for debugging and development, providing a representation that, if passed to `eval()`, would recreate the object.
 
+91. **Explain the purpose of the `__doc__` attribute in Python.**
+    - *Answer:* The `__doc__` attribute is used to access the docstring (documentation string) of a Python object, such as a module, class, or function. It provides information about the object's purpose and usage.
+
+92. **What is the purpose of the `*` operator in unpacking iterables?**
+    - *Answer:* The `*` operator is used for unpacking iterables in function arguments and assignments. It allows passing a variable number of elements as arguments or creating new iterables by combining existing ones.
+
+93. **Explain the purpose of the `functools.wraps` decorator in Python.**
+    - *Answer:* The `functools.wraps` decorator is used to update a wrapper function to look more like the wrapped function. It copies attributes such as `__name__` and `__doc__` to the wrapper, making it behave more like the original function.
+
+94. **How does the `any()` and `all()` functions work in Python?**
+    - *Answer:* The `any()` function returns `True` if at least one element in an iterable is true. The `all()` function returns `True` if all elements in an iterable are true. Example:
+      ```python
+      values = [True, False, True]
+      any_result = any(values)
+      all_result = all(values)
+      ```
+
+95. **Explain the purpose of the `try`...`except`...`else` block in Python.**
+    - *Answer:* The `try`...`except`...`else` block is used to handle exceptions in Python. Code inside the `try` block is executed, and if an exception occurs, the `except` block is executed. If no exception occurs, the `else` block is executed.
+
+96. **What is the purpose of the `is` operator in Python?**
+    - *Answer:* The `is` operator is used to test object identity. It returns `True` if two variables reference the same object, and `False` otherwise.
+
+97. **Explain the purpose of the `os.path` module in Python.**
+    - *Answer:* The `os.path` module provides a platform-independent way of using operating system-dependent functionality related to file paths. It includes functions for path manipulation, such as joining paths and retrieving directory names and file names.
+
+98. **How can you handle keyboard interrupts (`Ctrl+C`) in a Python script?**
+    - *Answer:* Keyboard interrupts can be handled using a `try`...`except` block with the `KeyboardInterrupt` exception. For example:
+      ```python
+      try:
+          # code that may be interrupted
+          while True:
+              pass
+      except KeyboardInterrupt:
+          print("Interrupted by user!")
+      ```
+
+99. **What is the purpose of the `timeit` module in Python?**
+    - *Answer:* The `timeit` module is used for measuring the execution time of small code snippets. It provides a simple interface to measure the execution time of Python statements or functions.
+
+100. **Explain the purpose of the `zip()` function in Python, and how can it be used to unzip a list of tuples?**
+    - *Answer:* The `zip()` function combines multiple iterables element-wise and returns an iterator of tuples. To unzip a list of tuples, you can use the `zip(*iterable)` syntax. Example:
+      ```python
+      names = ["Alice", "Bob", "Charlie"]
+      ages = [25, 30, 22]
+      zipped = zip(names, ages)
+
+      # Unzip
+      unzipped_names, unzipped_ages = zip(*zipped)
+      ```
+
