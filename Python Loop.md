@@ -1,8 +1,8 @@
 # Question 
 
 
-1: Print the first 10 natural numbers using for loop.
-2: Python program to print all the even numbers within the given range.
+1. Print the first 10 natural numbers using for loop.
+2. Python program to print all the even numbers within the given range.
 3: Python program to calculate the sum of all numbers from 1 to a given number.
 4: Python program to calculate the sum of all the odd numbers within the given range.
 5: Python program to print a multiplication table of a given number
